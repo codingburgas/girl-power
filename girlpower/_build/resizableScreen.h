@@ -2,4 +2,4 @@
 #include "raylib.h"
 #include <iostream>
 
-bool Screen(int screenWidth, int screenHeight);
+void Screen(int screenWidth, int screenHeight);

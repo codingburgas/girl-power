@@ -1,8 +1,7 @@
 #include "resizableScreen.h"
 
-bool Screen(int screenWidth, int screenHeight)
+void Screen(int screenWidth, int screenHeight)
 {
-    bool screen = true;
     if (IsWindowResized() && !IsWindowFullscreen())
     {
         screenWidth = GetScreenWidth();
@@ -13,7 +12,7 @@ bool Screen(int screenWidth, int screenHeight)
         int display = GetCurrentMonitor();
 
         if (IsWindowFullscreen())
-        {
+        { 
             SetWindowSize(screenWidth, screenHeight);
         }
         else
@@ -22,5 +21,4 @@ bool Screen(int screenWidth, int screenHeight)
         }
         ToggleFullscreen();
     }
-    return screen;
 }
