@@ -1,20 +1,36 @@
-#include "loading.h"
+#include "raylib.h"
 #include "pch.h"
+#include "loading.h"
 
-bool audioLoading(const int screenWidth, const int screenHeight)
+Rectangle loading =
 {
-    InitAudioDevice();
+        180,
+        180,
+        440,
+        50
+};
+int main()
+{
+    const int screenWidth = 1720;
+    const int screenHeight = 900;
 
-    Music music = LoadMusicStream("assets\sounds\Loading.ogg");
+    InitWindow(screenWidth, screenHeight, "bubble");
+
+    InitAudioDevice();            
+
+    Music music = LoadMusicStream("assets/sounds/Loading.ogg");
 
     PlayMusicStream(music);
 
-    float timePlayed = 0.0f;        
+    float timePlayed = 0.0f;
+    float roundness = 0.5f;
     bool pause = false;             
+
+    SetTargetFPS(30);         
 
     while (!WindowShouldClose())    
     {
-        UpdateMusicStream(music);
+        UpdateMusicStream(music);   
 
         if (IsKeyPressed(KEY_SPACE))
         {
@@ -22,44 +38,36 @@ bool audioLoading(const int screenWidth, const int screenHeight)
             PlayMusicStream(music);
         }
 
-        else if (IsKeyPressed(KEY_P))
+        if (IsKeyPressed(KEY_P))
         {
             pause = !pause;
 
-            if (pause)
-            {
-                PauseMusicStream(music);
-            }
-            else
-            {
-                ResumeMusicStream(music);
-            }
+            if (pause) PauseMusicStream(music);
+            else ResumeMusicStream(music);
         }
 
         timePlayed = GetMusicTimePlayed(music) / GetMusicTimeLength(music);
 
-        if (timePlayed > 1.0f)
-        {
-            timePlayed = 1.0f;
-        }
+        if (timePlayed > 1.0f) timePlayed = 1.0f;   
 
         BeginDrawing();
 
-        ClearBackground(DARKBLUE1);
+        ClearBackground(DARKBLUE3);
 
-        DrawText("Loading...", 255, 150, 20, RAYWHITE);
+        DrawText("MUSIC SHOULD BE PLAYIN", 255, 150, 20, LIGHTGRAY);
 
-        DrawRectangle(200, 200, 400, 12, LIGHTGRAY);
-        DrawRectangle(200, 200, (int)(timePlayed * 400.0f), 12, PURPLE2);
-        DrawRectangleLines(200, 200, 400, 12, PURPLE1);
+        DrawRectangleRounded(loading, roundness, 10, RAYWHITE);
+        DrawRectangleRounded(Rectangle{ 200, 200, (float)(timePlayed * 400.0f), 12 }, roundness, 10, PURPLE2);
 
-        DrawText("PRESS SPACE TO RESTART MUSIC", 215, 250, 20, LIGHTGRAY);
-        DrawText("PRESS P TO PAUSE/RESUME MUSIC", 208, 280, 20, LIGHTGRAY);
+        DrawText("space - restart audio", 215, 250, 20, LIGHTGRAY);
+        DrawText("p - pause", 208, 280, 20, LIGHTGRAY);
 
         EndDrawing();
+        
     }
-
     UnloadMusicStream(music);   
 
-    return false;
+    CloseAudioDevice();        
+
+    CloseWindow();         
 }
