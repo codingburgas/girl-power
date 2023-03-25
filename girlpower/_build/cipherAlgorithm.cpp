@@ -50,4 +50,3 @@ string HexToBinary(string input, string bin)
     }
     return bin;
 }
-

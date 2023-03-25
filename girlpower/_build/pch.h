@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<cmath>
+#include<string>
 #include "cipherAlgorithm.h"
 #include "frame.h"
 #include "loading.h"

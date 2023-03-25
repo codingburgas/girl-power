@@ -175,11 +175,9 @@
     <ClInclude Include="..\game\src\screens.h" />
     <ClInclude Include="cipherAlgorithm.h" />
     <ClInclude Include="frame.h" />
-    <ClInclude Include="layout.h" />
     <ClInclude Include="loading.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="resizableScreen.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="raylib.vcxproj">
@@ -189,11 +187,9 @@
   <ItemGroup>
     <ClCompile Include="cipherAlgorithm.cpp" />
     <ClCompile Include="frame.cpp" />
-    <ClCompile Include="layout.cpp" />
     <ClCompile Include="loading.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="resizableScreen.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
