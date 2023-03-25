@@ -50,3 +50,22 @@ string HexToBinary(string input, string bin)
     }
     return bin;
 }
+int findRandom()
+{
+    int bin = ((int)rand() % 2);
+
+    return bin;
+}
+
+string IV(string iv, int size)
+{
+    srand(time(NULL));
+
+    for (int i = 0; i < size; i++) {
+
+        int x = findRandom();
+
+        iv += to_string(x);
+    }
+    return iv;
+}
