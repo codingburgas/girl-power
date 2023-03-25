@@ -1,4 +1,7 @@
 #pragma once
 #include "raylib.h"
-#include <iostream>
-#include <vector>
+
+char toUpper(char input);
+string HexToBinary(string input, string bin);
+string IV(string iv, int size);
+int findRandom();
