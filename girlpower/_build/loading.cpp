@@ -1,23 +1,16 @@
 #include "loading.h"
-#include "main.h"
+#include "pch.h"
 
-int main()
+bool audioLoading(const int screenWidth, const int screenHeight)
 {
-    const int screenWidth = 800;
-    const int screenHeight = 450;
-
-    InitWindow(screenWidth, screenHeight, "loading page");
-
     InitAudioDevice();
 
-    Music music = LoadMusicStream("assets\sounds\Loading.mp3");
+    Music music = LoadMusicStream("assets\sounds\Loading.ogg");
 
     PlayMusicStream(music);
 
     float timePlayed = 0.0f;        
     bool pause = false;             
-
-    SetTargetFPS(30);
 
     while (!WindowShouldClose())    
     {
@@ -29,27 +22,36 @@ int main()
             PlayMusicStream(music);
         }
 
-        if (IsKeyPressed(KEY_P))
+        else if (IsKeyPressed(KEY_P))
         {
             pause = !pause;
 
-            if (pause) PauseMusicStream(music);
-            else ResumeMusicStream(music);
+            if (pause)
+            {
+                PauseMusicStream(music);
+            }
+            else
+            {
+                ResumeMusicStream(music);
+            }
         }
 
         timePlayed = GetMusicTimePlayed(music) / GetMusicTimeLength(music);
 
-        if (timePlayed > 1.0f) timePlayed = 1.0f;   
+        if (timePlayed > 1.0f)
+        {
+            timePlayed = 1.0f;
+        }
 
         BeginDrawing();
 
-        ClearBackground(LIGHTBLACK);
+        ClearBackground(DARKBLUE1);
 
-        DrawText("MUSIC SHOULD BE PLAYING!", 255, 150, 20, LIGHTGRAY);
+        DrawText("Loading...", 255, 150, 20, RAYWHITE);
 
         DrawRectangle(200, 200, 400, 12, LIGHTGRAY);
-        DrawRectangle(200, 200, (int)(timePlayed * 400.0f), 12, MAROON);
-        DrawRectangleLines(200, 200, 400, 12, GRAY);
+        DrawRectangle(200, 200, (int)(timePlayed * 400.0f), 12, PURPLE2);
+        DrawRectangleLines(200, 200, 400, 12, PURPLE1);
 
         DrawText("PRESS SPACE TO RESTART MUSIC", 215, 250, 20, LIGHTGRAY);
         DrawText("PRESS P TO PAUSE/RESUME MUSIC", 208, 280, 20, LIGHTGRAY);
@@ -59,9 +61,5 @@ int main()
 
     UnloadMusicStream(music);   
 
-    CloseAudioDevice();    
-
-    CloseWindow();
-
-    return 0;
+    return false;
 }
