@@ -86,3 +86,13 @@ string Peppering(string encrypt, string iv)
     }
     return encrypt;
 }
+string Salting(string encrypt, string iv)
+{
+    int count = ((int)rand() % 4);
+    srand(time(NULL));
+
+    for (size_t i = 0; i < encrypt.size(); i + 2)
+    {
+        encrypt[i] += iv[count];
+    }return encrypt;
+}
