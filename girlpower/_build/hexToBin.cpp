@@ -25,3 +25,13 @@ string HexToBinary(string input, string bin)
     }
     return bin;
 }
+int binToHex(int hex, string binary)
+{
+    int size = binary.size();
+
+    for (int i = 0; i < size; i++)
+    {
+        hex += (binary[size - i - 1] - 48) * pow(2, i);
+    }
+    return hex;
+}
