@@ -106,3 +106,15 @@ string Peppering(string encrypt, int size)
     string peppering = IV(encrypt, size);
     return peppering;
 }
+string Salting(string encrypt, int size)
+{
+    int sizePeppering = encrypt.size();
+    string salting = IV(encrypt, size);
+    for (int i = salting.size() - sizePeppering; i < salting.size(); i++)
+    {
+        int salt = ((int)rand() % sizePeppering);
+        srand(time(NULL));
+        swap(salting[i], salting[salt]);
+    }
+    return salting;
+}
