@@ -4,12 +4,6 @@
   </a>
 </p>
 
-<p align = "center">
-   <img src = "https://img.shields.io/github/languages/count/SPGeorgieva21/Girl-power?style=flat%22%3E
-   <img src = "https://img.shields.io/github/repo-size/SPGeorgieva21/Girl-power?style=flat%22%3E
-   <img src = "https://img.shields.io/github/stars/SPGeorgieva21/Girl-power?style=social%22%3E
-   <img src = "https://img.shields.io/github/contributors/SPGeorgieva21/EGirl-power?style=flat%22%3E
-</p>
 ## :pencil: Table of Contents
 - [Description](#description)
 - [Used technologies](#used_technologies)
