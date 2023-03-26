@@ -3,25 +3,6 @@
 
 using namespace std;
 
-const char hx[] = {
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F'
-};
-
 char toUpper(char input)
 {
     return char(input - 32);
@@ -29,27 +10,24 @@ char toUpper(char input)
 
 string HexToBinary(string input, string bin)
 {
-    size_t size = input.size();
-    bin = string(size * 4, '0');
+    int size = input.size();
 
-    for (size_t i = 0; i < size; i++)
+    bin = "";
+
+    for (int i = 0; i <= size; i++)
     {
-        if ((int)input[i] > 90)
-        {
-            toUpper(input[i]);
-        }
-        unsigned int offset = i * 4;
-        string dec;
-        dec[0] = input[i];
-        int todec = stoi(dec, nullptr, 16);
+        int ascii = int(input[i]);
 
-        for (size_t j = 0; j < 4; j++)
+        while (ascii > 0)
         {
-            bin[offset + 3 - j] = ((todec & (1 << j)) != 0) ? '1' : '0';
+            (ascii % 2) ? bin.push_back('1') :
+                bin.push_back('0');
+            ascii /= 2;
         }
-    }
-    return bin;
+        reverse(bin.begin(), bin.end());
+    }return bin;
 }
+
 int findRandom()
 {
     int bin = ((int)rand() % 2);
@@ -61,22 +39,39 @@ string IV(string iv, int size)
 {
     srand(time(NULL));
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
+    {
 
         int x = findRandom();
-
         iv += to_string(x);
     }
     return iv;
 }
-
-string encryptXor(string str, string encrypt)
+string encryptXor(string text, int key)
 {
-    char key[3] = { 'K', 'C', 'Q' };
 
-    for (int i = 0; i < encrypt.size(); i++)
+    for (int i = 0; i < text.length(); i++)
     {
-        str += encrypt[i] ^ key[i % (sizeof(key) / sizeof(char))];
+        if (isupper(text[i]))
+        {
+            text[i] = char(int(text[i] + key - 65) % 26 + 65);
+        }
+        else
+        {
+            text[i] = char(int(text[i] + key - 97) % 26 + 97);
+        }
     }
-    return str;
+    return text;
+}
+string xoring(string str, string iv, int size) {
+    string x = "";
+
+    for (int i = 0; i < size; i++)
+    {
+        if (str[i] == iv[i])
+            x += "0";
+        else
+            x += "1";
+    }
+    return x;
 }
