@@ -69,3 +69,14 @@ string IV(string iv, int size)
     }
     return iv;
 }
+
+string encryptXor(string str, string encrypt)
+{
+    char key[3] = { 'K', 'C', 'Q' };
+
+    for (int i = 0; i < encrypt.size(); i++)
+    {
+        str += encrypt[i] ^ key[i % (sizeof(key) / sizeof(char))];
+    }
+    return str;
+}
