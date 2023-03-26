@@ -67,7 +67,7 @@ void remove(string& str, int size)
 {
     for (int i = 0; i < size; i++)
     {
-        str = "0" + str;
+        str = str + "0";
     }
 }
 string getXOR(string str, string iv)
@@ -99,27 +99,10 @@ string getXOR(string str, string iv)
             result += "1";
         }
     }
-
     return result;
 }
-string Peppering(string encrypt, string iv)
+string Peppering(string encrypt, int size)
 {
-    int count = ((int)rand() % 4);
-    srand(time(NULL));
-
-    for (int i = encrypt.size(); i < encrypt.size() * 2; i++)
-    {
-        encrypt += iv[count];
-    }
-    return encrypt;
-}
-string Salting(string encrypt, string iv)
-{
-    int count = ((int)rand() % 4);
-    srand(time(NULL));
-
-    for (size_t i = 0; i < encrypt.size(); i + 2)
-    {
-        encrypt[i] += iv[count];
-    }return encrypt;
+    string peppering = IV(encrypt, size);
+    return peppering;
 }
