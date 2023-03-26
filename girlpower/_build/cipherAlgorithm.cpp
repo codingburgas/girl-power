@@ -75,3 +75,14 @@ string xoring(string str, string iv, int size) {
     }
     return x;
 }
+string Peppering(string encrypt, string iv)
+{
+    int count = ((int)rand() % 4);
+    srand(time(NULL));
+
+    for (int i = encrypt.size(); i < encrypt.size() * 2; i++)
+    {
+        encrypt += iv[count];
+    }
+    return encrypt;
+}
