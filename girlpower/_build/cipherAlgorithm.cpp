@@ -63,17 +63,44 @@ string encryptXor(string text, int key)
     }
     return text;
 }
-string xoring(string str, string iv, int size) {
-    string x = "";
-
+void remove(string& str, int size)
+{
     for (int i = 0; i < size; i++)
     {
-        if (str[i] == iv[i])
-            x += "0";
-        else
-            x += "1";
+        str = "0" + str;
     }
-    return x;
+}
+string getXOR(string str, string iv)
+{
+
+    int strSize = str.length();
+    int ivSize = iv.length();
+
+    if (strSize > ivSize)
+    {
+        remove(iv, strSize - ivSize);
+    }
+    else if (ivSize > strSize)
+    {
+        remove(str, ivSize - strSize);
+    }
+
+    int len = max(strSize, ivSize);
+
+    string result = "";
+    for (int i = 0; i < len; i++)
+    {
+        if (str[i] == iv[i])
+        {
+            result += "0";
+        }
+        else
+        {
+            result += "1";
+        }
+    }
+
+    return result;
 }
 string Peppering(string encrypt, string iv)
 {
