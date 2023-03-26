@@ -175,6 +175,7 @@
     <ClInclude Include="..\game\src\screens.h" />
     <ClInclude Include="cipherAlgorithm.h" />
     <ClInclude Include="frame.h" />
+    <ClInclude Include="inputBox.h" />
     <ClInclude Include="loading.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="pch.h" />
@@ -187,6 +188,7 @@
   <ItemGroup>
     <ClCompile Include="cipherAlgorithm.cpp" />
     <ClCompile Include="frame.cpp" />
+    <ClCompile Include="inputBox.cpp" />
     <ClCompile Include="loading.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp" />

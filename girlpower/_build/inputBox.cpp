@@ -1,6 +1,4 @@
 #include "pch.h"
-#include "inputBox.h"
-#include<iostream>
 #define MaxInput 16
 
 Rectangle textBox = 

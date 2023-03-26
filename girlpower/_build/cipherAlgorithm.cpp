@@ -1,52 +1,7 @@
-#include "cipherAlgorithm.h"
 #include "pch.h"
 
 using namespace std;
 
-char toUpper(char input)
-{
-    return char(input - 32);
-}
-
-string HexToBinary(string input, string bin)
-{
-    int size = input.size();
-
-    bin = "";
-
-    for (int i = 0; i <= size; i++)
-    {
-        int ascii = int(input[i]);
-
-        while (ascii > 0)
-        {
-            (ascii % 2) ? bin.push_back('1') :
-                bin.push_back('0');
-            ascii /= 2;
-        }
-        reverse(bin.begin(), bin.end());
-    }return bin;
-}
-
-int findRandom()
-{
-    int bin = ((int)rand() % 2);
-
-    return bin;
-}
-
-string IV(string iv, int size)
-{
-    srand(time(NULL));
-
-    for (int i = 0; i < size; i++)
-    {
-
-        int x = findRandom();
-        iv += to_string(x);
-    }
-    return iv;
-}
 string encryptXor(string text, int key)
 {
 
@@ -70,27 +25,27 @@ void remove(string& str, int size)
         str = str + "0";
     }
 }
-string getXOR(string str, string iv)
+string getXOR(string str, string is)
 {
 
     int strSize = str.length();
-    int ivSize = iv.length();
+    int isSize = is.length();
 
-    if (strSize > ivSize)
+    if (strSize > isSize)
     {
-        remove(iv, strSize - ivSize);
+        remove(is, strSize - isSize);
     }
-    else if (ivSize > strSize)
+    else if (isSize > strSize)
     {
-        remove(str, ivSize - strSize);
+        remove(str, isSize - strSize);
     }
 
-    int len = max(strSize, ivSize);
+    int len = max(strSize, isSize);
 
     string result = "";
     for (int i = 0; i < len; i++)
     {
-        if (str[i] == iv[i])
+        if (str[i] == is[i])
         {
             result += "0";
         }
@@ -103,13 +58,13 @@ string getXOR(string str, string iv)
 }
 string Peppering(string encrypt, int size)
 {
-    string peppering = IV(encrypt, size);
+    string peppering = IS(encrypt, size);
     return peppering;
 }
 string Salting(string encrypt, int size)
 {
     int sizePeppering = encrypt.size();
-    string salting = IV(encrypt, size);
+    string salting = IS(encrypt, size);
     for (int i = salting.size() - sizePeppering; i < salting.size(); i++)
     {
         int salt = ((int)rand() % sizePeppering);

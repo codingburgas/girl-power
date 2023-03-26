@@ -7,6 +7,9 @@
 #include "frame.h"
 #include "loading.h"
 #include "main.h"
+#include "hexToBin.h"
+#include "initializingString.h"
+#include "inputBox.h"
 
 #define DARKBLUE1 Color{ 3, 6, 23, 255 }
 #define DARKBLUE2 Color{ 7, 11, 38, 255 }
