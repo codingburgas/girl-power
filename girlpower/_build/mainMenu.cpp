@@ -27,15 +27,9 @@ bool mainMenuLoop(const int screenWidth, int framesCounter, float roundnessTextB
         if (handleButton(playButton, 309, false, true))
         {
 
-            if (inputPrint(mouseOnText) == true)
-            {
-                Active(framesCounter, letterCounter);
-            }
-            else
-            {
-                nonActive(framesCounter);
-            }
-            drawInput(screenWidth, framesCounter, letterCounter, roundnessTextBox, roundnessMain);
+            if (inputBox()) return true;
+            else return false;
+
         }
         if (handleButton(quitButton, 309, false, true)) return false;
 
