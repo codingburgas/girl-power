@@ -7,7 +7,8 @@ Rectangle loading =
         1157,
         156
 };
-bool LoadingLoop(float timePlayed, float roundness)
+
+void LoadingLoop(float timePlayed, float roundness)
 {
     InitAudioDevice();            
 
@@ -54,7 +55,5 @@ bool LoadingLoop(float timePlayed, float roundness)
 
     CloseAudioDevice();        
 
-    CloseWindow();         
-
-    return false;
+    CloseWindow(); 
 }

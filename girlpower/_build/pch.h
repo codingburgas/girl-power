@@ -11,6 +11,7 @@
 #include "hexToBin.h"
 #include "initializingString.h"
 #include "inputBox.h"
+#include "mainMenu.h"
 #include "buttons.h"
 #include "template.h"
 

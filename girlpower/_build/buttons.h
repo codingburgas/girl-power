@@ -12,7 +12,6 @@ struct Button
 
 void setButtonState(Button& button);
 
-
 bool changeButtonByState(Button& button, float startWidth, bool editWidth, bool drawLines);
 
 bool handleButton(Button& button, float startWidth, bool editWidth, bool drawLines);

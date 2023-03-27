@@ -1,5 +1,4 @@
-#include <string>
-#include <iostream>
+#include "pch.h"
 using namespace std;
 
 const char lookuparrbin2hex[] = { '0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F' };
@@ -19,18 +18,12 @@ char convert_bin2hex(string bits)
 	return lookuparrbin2hex[result];
 }
 
-std::string getHexRowFails(string rowresult)
+string getHexRowFails(string rowresult)
 {
-	std::string endresult = "";
+	string endresult = "";
 	for (int i = 0; i < rowresult.length(); i = i + 4)
 	{
 		endresult += convert_bin2hex(rowresult.substr(i, 4));
 	}
 	return endresult;
-}
-
-int main()
-{
-	std::string rowresult = "101001010101";
-	cout << rowresult << " in hex is " << getHexRowFails(rowresult) << endl;
 }

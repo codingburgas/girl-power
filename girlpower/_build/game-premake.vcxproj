@@ -181,6 +181,7 @@
     <ClInclude Include="inputBox.h" />
     <ClInclude Include="loading.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="mainMenu.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="template.h" />
   </ItemGroup>
@@ -198,6 +199,7 @@
     <ClCompile Include="inputBox.cpp" />
     <ClCompile Include="loading.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="template.cpp" />
   </ItemGroup>

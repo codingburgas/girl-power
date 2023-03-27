@@ -68,7 +68,7 @@ string Salting(string encrypt, int size)
     string salting = IS(encrypt, size);
     for (int i = salting.size() - sizePeppering; i < salting.size(); i++)
     {
-        int salt = ((int)rand() % sizePeppering);
+        size_t salt = ((int)rand() % sizePeppering);
         srand(time(NULL));
         swap(salting[i], salting[salt]);
     }

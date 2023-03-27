@@ -50,19 +50,3 @@ void menuCipherTemplate(float roundness)
 	DrawRectangleRounded(BottomLeft, roundness, 10, DARKBLUE1);
 	DrawRectangleRounded(BottomRight, roundness, 10, DARKBLUE1);
 }
-//int main()
-//{
-//	InitWindow(1720, 900, "bubble");
-//	
-//	float roundness = 0.2f;
-//	while (!WindowShouldClose())
-//	{
-//		BeginDrawing();
-//
-//		mainCipherTemplate(roundness);
-//
-//		EndDrawing();
-//	}
-//
-//	CloseWindow();
-//}

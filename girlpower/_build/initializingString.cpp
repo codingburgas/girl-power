@@ -3,7 +3,7 @@ using namespace std;
 
 int findRandom()
 {
-    int bin = ((int)rand() % 2);
+    size_t bin = ((int)rand() % 2);
 
     return bin;
 }
