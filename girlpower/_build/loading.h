@@ -1,5 +1,4 @@
 #pragma once
 #include "raylib.h"
-#include<iostream>
 
-bool audioLoading(const int screenWidth, const int screenHeight);
+bool LoadingLoop(float timePlayed, float roundness);

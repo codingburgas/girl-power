@@ -173,12 +173,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\game\src\screens.h" />
+    <ClInclude Include="buttons.h" />
     <ClInclude Include="cipherAlgorithm.h" />
     <ClInclude Include="frame.h" />
+    <ClInclude Include="hexToBin.h" />
+    <ClInclude Include="initializingString.h" />
     <ClInclude Include="inputBox.h" />
     <ClInclude Include="loading.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="template.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="raylib.vcxproj">
@@ -186,12 +190,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="buttons.cpp" />
     <ClCompile Include="cipherAlgorithm.cpp" />
     <ClCompile Include="frame.cpp" />
+    <ClCompile Include="hexToBin.cpp" />
+    <ClCompile Include="initializingString.cpp" />
     <ClCompile Include="inputBox.cpp" />
     <ClCompile Include="loading.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="template.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

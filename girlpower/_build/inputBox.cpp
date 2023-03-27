@@ -9,11 +9,11 @@ Rectangle textBox =
         50
 };
 
-Rectangle background = 
+Rectangle background =
 {
-    35, 
-    25, 
-    1650, 
+    35,
+    25,
+    1650,
     850
 };
 
@@ -38,20 +38,22 @@ void drawInput(const int screenWidth, int framesCounter, int letterCount, float 
 
     DrawRectangleRounded(background, roundnessMain, 30, DARKBLUE1);
 
-    DrawText("Hover the imput feild to enter your password", screenWidth / 2 - 100, 220, 20, GRAY);
+    DrawText("Hover the imput feild to enter your password", screenWidth / 2 - 100, 220, 20, PURPLE2);
 
     DrawRectangleRounded(textBox, roundnessTextBox, 100, RAYWHITE);
 
-    DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, PURPLE2);
-
+    
     if (CheckCollisionPointRec(GetMousePosition(), textBox))
     {
+        DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, PURPLE2);
+
         if(letterCount < MaxInput)
         {
             if (IsKeyPressed(KEY_ENTER))
             {
-                //cipherload
-                DrawText("us be", (int)textBox.x + 160 + MeasureText(name, 40), (int)textBox.y + 200, 40, PURPLE2);
+                float roundness = 0.5f;
+                float timePlayed = 0.0f;
+                LoadingLoop(timePlayed, roundness);
             }
         }
     }
@@ -59,8 +61,6 @@ void drawInput(const int screenWidth, int framesCounter, int letterCount, float 
     {
         DrawText("Please enter up to 16 characters!", screenWidth / 2 - 120, 520, 20, GRAY);
     }
-
-    DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MaxInput), screenWidth / 2 - 120, 420, 20, DARKBLUE3);
 }
 
 int Active(int framesCounter, int letterCount)
@@ -106,33 +106,4 @@ bool IsAnyKeyPressed()
     if ((key >= 32) && (key <= 126)) keyPressed = true;
 
     return keyPressed;
-}
-int main()
-{
-    const int screenWidth = 1720;
-    const int screenHeight = 900;
-    int framesCounter = 0;
-    int letterCounter = 0;
-    float roundnessTextBox = 0.5;
-    bool mouseOnText = false;
-    float roundnessMain = 0.1;
-
-    InitWindow(screenWidth, screenHeight, "bubble");
-    SetTargetFPS(10);
-
-    while (!WindowShouldClose())
-    {
-        if (inputPrint(mouseOnText) == true)
-        {
-            Active(framesCounter, letterCounter);
-        }
-        else
-        {
-            nonActive(framesCounter);
-        }
-
-        BeginDrawing();
-        drawInput(screenWidth, framesCounter, letterCounter, roundnessTextBox, roundnessMain);
-        EndDrawing();
-    }CloseWindow();
 }

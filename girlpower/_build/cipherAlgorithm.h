@@ -1,4 +1,5 @@
 #pragma once
+using namespace std;
 
 string encryptXor(string text, int key);
 
