@@ -1,5 +1,4 @@
 #include "pch.h"
-
 using namespace std;
 
 string encryptXor(string text, int key)
@@ -18,6 +17,7 @@ string encryptXor(string text, int key)
     }
     return text;
 }
+
 void remove(string& str, int size)
 {
     for (int i = 0; i < size; i++)
@@ -25,6 +25,7 @@ void remove(string& str, int size)
         str = str + "0";
     }
 }
+
 string getXOR(string str, string is)
 {
 
