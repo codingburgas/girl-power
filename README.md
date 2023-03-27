@@ -33,6 +33,6 @@
 - [Жасмина Вълкова](https://github.com/ZIValkova21) - QA Engineer
 
 ## :clipboard: Presentation and Documentation <a name="documentation"></a>
-+ [Presentation](https://github.com/SPGeorgieva21/Girl-power/blob/main/Documents/Presentation.pptx)
-+ [Documentation](https://github.com/SPGeorgieva21/Girl-power/blob/docs/Documents/Documentation.docx)
-+ [QA Documentation](https://github.com/SPGeorgieva21/Girl-power/blob/main/Documents/QA%20Documentation.xlsx)
++ [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/spgeorgieva21_codingburgas_bg/EaoK52xxEsFCo5EHc61fgZYBsPQzItiCUgBrIx8yRhgs6A)
++ [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/amzheleva21_codingburgas_bg/EXKtqGgx3-lGq7T4YpYrwD8BAx8UfXNTP4Go88fZZ2YsLQ?e=pG73Eo)
++ [QA Documentation](https://codingburgas-my.sharepoint.com/:x:/g/personal/spgeorgieva21_codingburgas_bg/EZW4ak2i-9FHkEcpO2W3zQgBU1MVSLZv9wNohYQfajegjw?e=hPzEbE)
