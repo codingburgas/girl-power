@@ -180,7 +180,6 @@
     <ClInclude Include="initializingString.h" />
     <ClInclude Include="inputBox.h" />
     <ClInclude Include="loading.h" />
-    <ClInclude Include="main.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="template.h" />

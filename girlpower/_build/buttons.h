@@ -10,8 +10,8 @@ struct Button
 };
 
 
-void setButtonState(Button& button);
+void SetButtonState(Button& button);
 
-bool changeButtonByState(Button& button, float startWidth, bool editWidth, bool drawLines);
+bool ChangeButtonByState(Button& button, float startWidth, bool editWidth, bool drawLines);
 
-bool handleButton(Button& button, float startWidth, bool editWidth, bool drawLines);
+bool HandleButton(Button& button, float startWidth, bool editWidth, bool drawLines);

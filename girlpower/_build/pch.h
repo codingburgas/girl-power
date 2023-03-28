@@ -7,7 +7,6 @@
 #include "cipherAlgorithm.h"
 #include "frame.h"
 #include "loading.h"
-#include "main.h"
 #include "hexToBin.h"
 #include "initializingString.h"
 #include "inputBox.h"

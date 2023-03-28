@@ -36,13 +36,13 @@ Rectangle BottomRight =
 	567,
 	266
 };
-void mainCipherTemplate(float roundness)
+void MainCipherTemplate(float roundness)
 {
 	ClearBackground(DARKBLUE3);
 
 	DrawRectangleRounded(layout, roundness, 10, DARKBLUE1);
 }
-void menuCipherTemplate(float roundness)
+void MenuCipherTemplate(float roundness)
 {
 	ClearBackground(DARKBLUE3);
 	DrawRectangleRounded(TopLeft, roundness, 10, DARKBLUE1);

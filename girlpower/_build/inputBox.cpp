@@ -1,5 +1,4 @@
 #include "pch.h"
-#include "raygui.h"
 
 #define max 16
 
@@ -27,7 +26,7 @@ bool IsAnyKeyPressed()
     return keyPressed;
 }
 
-bool inputBox()
+bool InputBox()
 {
     string password;
     int inputs;
@@ -93,7 +92,7 @@ bool inputBox()
 
         BeginDrawing();
 
-        mainCipherTemplate(roundness);
+        MainCipherTemplate(roundness);
         DrawRectangleRec(textBox, LIGHTGRAY);
         DrawText("Hover the imput feild to enter your password", screenWidth / 2 - 100, 220, 20, PURPLE2);
 

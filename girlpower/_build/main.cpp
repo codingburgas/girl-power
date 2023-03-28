@@ -13,8 +13,9 @@ int main()
 
 
     InitWindow(screenWidth, screenHeight, "cipher");
-    mainMenuLoop(screenWidth, framesCounter, letterCounter, roundnessMain, roundnessTextBox, mouseOnText);
+    MainMenuLoop(screenWidth, framesCounter, letterCounter, roundnessMain, roundnessTextBox, mouseOnText);
     //input box window 
-
+    
     SetTargetFPS(10);
+
 }

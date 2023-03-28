@@ -3,4 +3,4 @@
 
 bool IsAnyKeyPressed();
 
-bool inputBox();
+bool InputBox();

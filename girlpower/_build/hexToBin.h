@@ -1,10 +1,6 @@
 #pragma once
 using namespace std;
 
-char toUpper(char input);
+char LeftShift(string bits);
 
-string HexToBinary(string input, string bin);
-
-char BinToHex(string bits);
-
-string binToHex(string rowresult);
+string BinToHex(string rowresult);

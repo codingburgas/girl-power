@@ -1,7 +1,7 @@
 #include "pch.h"
 using namespace std;
 
-bool mainMenuLoop(const int screenWidth, int framesCounter, float roundnessTextBox, float roundnessMain, int letterCounter, bool mouseOnText)
+bool MainMenuLoop(const int screenWidth, int framesCounter, float roundnessTextBox, float roundnessMain, int letterCounter, bool mouseOnText)
 {
     Button playButton;
     playButton.rec = { 700, 251, 319, 109 };
@@ -22,16 +22,16 @@ bool mainMenuLoop(const int screenWidth, int framesCounter, float roundnessTextB
 
         ClearBackground(RAYWHITE);
 
-        mainCipherTemplate(0.1f);
+        MainCipherTemplate(0.1f);
 
-        if (handleButton(playButton, 309, false, true))
+        if (HandleButton(playButton, 309, false, true))
         {
 
-            if (inputBox()) return true;
+            if (InputBox()) return true;
             else return false;
 
         }
-        if (handleButton(quitButton, 309, false, true)) return false;
+        if (HandleButton(quitButton, 309, false, true)) return false;
 
         DrawTextEx(mainFont, "Play", Vector2({ playButton.rec.x + (playButton.rec.width / 12), playButton.rec.y + (playButton.rec.height / 4) }), 54, 0, RAYWHITE);
         DrawTextEx(mainFont, "Quit", Vector2({ quitButton.rec.x + (quitButton.rec.width / 15), quitButton.rec.y + (quitButton.rec.height / 4) }), 54, 0, RAYWHITE);

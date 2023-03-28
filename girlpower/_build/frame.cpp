@@ -1,6 +1,6 @@
 #include "pch.h"
 
-void printFrame(const int screenWidth, const int screenHeight)
+void PrintFrame(const int screenWidth, const int screenHeight)
 {
 		ClearBackground(DARKBLUE3);
         Font Bubble = LoadFontEx("assets/fonts/Designer.ttf", 108, NULL, 0);

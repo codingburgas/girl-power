@@ -1,24 +1,7 @@
 #include "pch.h"
 using namespace std;
 
-string encryptXor(string text, int key)
-{
-
-    for (int i = 0; i < text.length(); i++)
-    {
-        if (isupper(text[i]))
-        {
-            text[i] = char(int(text[i] + key - 65) % 26 + 65);
-        }
-        else
-        {
-            text[i] = char(int(text[i] + key - 97) % 26 + 97);
-        }
-    }
-    return text;
-}
-
-void remove(string& str, int size)
+void Remove(string& str, int size)
 {
     for (int i = 0; i < size; i++)
     {
@@ -26,7 +9,7 @@ void remove(string& str, int size)
     }
 }
 
-string getXOR(string str, string is)
+string GetXOR(string str, string is)
 {
 
     int strSize = str.length();
@@ -34,11 +17,11 @@ string getXOR(string str, string is)
 
     if (strSize > isSize)
     {
-        remove(is, strSize - isSize);
+        Remove(is, strSize - isSize);
     }
     else if (isSize > strSize)
     {
-        remove(str, isSize - strSize);
+        Remove(str, isSize - strSize);
     }
 
     int len = max(strSize, isSize);

@@ -1,11 +1,9 @@
 #pragma once
 using namespace std;
 
-string encryptXor(string text, int key);
+void Remove(string& str, int size);
 
-void remove(string& str, int size);
-
-string getXOR(string str, string is);
+string GetXOR(string str, string is);
 
 string Peppering(string encrypt, int size);
 

@@ -1,7 +1,7 @@
 #include "pch.h"
 using namespace std;
 
-void setButtonState(Button& button)
+void SetButtonState(Button& button)
 {
 	button.state = 0;
 	if (CheckCollisionPointRec(GetMousePosition(), button.rec))
@@ -22,7 +22,7 @@ void setButtonState(Button& button)
 	}
 }
 
-bool changeButtonByState(Button& button, float startWidth, bool editWidth, bool drawLines)
+bool ChangeButtonByState(Button& button, float startWidth, bool editWidth, bool drawLines)
 {
 	if (button.state == 3)
 	{
@@ -64,8 +64,8 @@ bool changeButtonByState(Button& button, float startWidth, bool editWidth, bool 
 	return false;
 }
 
-bool handleButton(Button& button, float startWidth, bool editWidth, bool drawLines)
+bool HandleButton(Button& button, float startWidth, bool editWidth, bool drawLines)
 {
-	setButtonState(button);
-	return changeButtonByState(button, startWidth, editWidth, drawLines);
+	SetButtonState(button);
+	return ChangeButtonByState(button, startWidth, editWidth, drawLines);
 }

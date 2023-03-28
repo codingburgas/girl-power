@@ -1,5 +1,5 @@
 #pragma once
 #include "raylib.h"
 
-void mainCipherTemplate(float roundness);
-void menuCipherTemplate(float roundness);
+void MainCipherTemplate(float roundness);
+void MenuCipherTemplate(float roundness);

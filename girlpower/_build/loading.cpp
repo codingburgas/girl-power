@@ -50,7 +50,7 @@ bool LoadingLoop()
 
             BeginDrawing();
             float round = 0.1f;
-            mainCipherTemplate(round);
+            MainCipherTemplate(round);
             DrawText("LOADING...", 739, 240, 60, LIGHTGRAY);
             DrawRectangleRounded(loading, roundness, 10, RAYWHITE);
             DrawRectangleRounded(Rectangle{ 401, 430, (float)(timePlayed * 850.0f), 50 }, roundness, 50, PURPLE2);
