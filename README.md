@@ -18,7 +18,6 @@
 <p align="center"><b>How will you cipher your data?</b></p>
 
 <p align="center">
-    <img src="https://cdn.discordapp.com/attachments/884052584762077245/1090112430023123015/line-dark.png#gh-dark-mode-only"/>
     <img src="https://cdn.discordapp.com/attachments/884052584762077245/1090112461216157726/line-light.png#gh-light-mode-only"/>
 </p>
 
@@ -66,7 +65,6 @@
   - [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/spgeorgieva21_codingburgas_bg/EaoK52xxEsFCo5EHc61fgZYBsPQzItiCUgBrIx8yRhgs6A)
 
 <p align="center">
-    <img src="https://cdn.discordapp.com/attachments/884052584762077245/1090112430023123015/line-dark.png#gh-dark-mode-only"/>
     <img src="https://cdn.discordapp.com/attachments/884052584762077245/1090112461216157726/line-light.png#gh-light-mode-only"/>
 </p>
 
@@ -77,7 +75,6 @@ Here's the link for you:
 <pre>https://github.com/codingburgas/girl-power/releases</pre>
 
 <p align="center">
-    <img src="https://cdn.discordapp.com/attachments/884052584762077245/1090112430023123015/line-dark.png#gh-dark-mode-only"/>
     <img src="https://cdn.discordapp.com/attachments/884052584762077245/1090112461216157726/line-light.png#gh-light-mode-only"/>
 </p>
 
