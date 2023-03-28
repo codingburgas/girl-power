@@ -3,7 +3,7 @@ using namespace std;
 
 const char lookuparrbin2hex[] = { '0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F' };
 
-char convert_bin2hex(string bits)
+char BinToHex(string bits)
 {
 	unsigned int result = 0;
 	unsigned int shifter0 = 0;
@@ -18,12 +18,12 @@ char convert_bin2hex(string bits)
 	return lookuparrbin2hex[result];
 }
 
-string getHexRowFails(string rowresult)
+string binToHex(string rowresult)
 {
 	string endresult = "";
 	for (int i = 0; i < rowresult.length(); i = i + 4)
 	{
-		endresult += convert_bin2hex(rowresult.substr(i, 4));
+		endresult += BinToHex(rowresult.substr(i, 4));
 	}
 	return endresult;
 }

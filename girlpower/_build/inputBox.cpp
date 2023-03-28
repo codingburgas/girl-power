@@ -1,4 +1,6 @@
 #include "pch.h"
+#include "raygui.h"
+
 #define max 16
 
 Rectangle textBox =
@@ -24,8 +26,11 @@ bool IsAnyKeyPressed()
 
     return keyPressed;
 }
+
 bool inputBox()
 {
+    string password;
+    int inputs;
     const int screenWidth = 1720;
     const int screenHeight = 900;
     float roundness = 0.1f;
@@ -62,20 +67,18 @@ bool inputBox()
 
                 key = GetCharPressed();  
             }
-
+            if (IsKeyPressed(KEY_ENTER))
+            {
+                if (LoadingLoop()) return true;
+                else return false;
+            }
             if (IsKeyPressed(KEY_BACKSPACE))
             {
                 letterCount--;
                 if (letterCount < 0) letterCount = 0;
                 name[letterCount] = '\0';
             }
-            else if (IsKeyPressed(KEY_ENTER))
-            {
-                float roundness = 0.5f;
-                float timePlayed = 0.0f;
-                if (LoadingLoop()) return true;
-                else return false;
-            }
+            
         }
         else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 
@@ -91,21 +94,14 @@ bool inputBox()
         BeginDrawing();
 
         mainCipherTemplate(roundness);
-
+        DrawRectangleRec(textBox, LIGHTGRAY);
         DrawText("Hover the imput feild to enter your password", screenWidth / 2 - 100, 220, 20, PURPLE2);
 
         DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, MAROON);
 
         DrawText(TextFormat("Input: %i/%i", letterCount, max), 315, 250, 20, DARKGRAY);
 
-        if (mouseOnText)
-        {
-            if (letterCount < max)
-            {
-                if (((framesCounter / 20) % 2) == 0) DrawText("_", (int)textBox.x + 8 + MeasureText(name, 40), (int)textBox.y + 12, 40, MAROON);
-            }
-            else DrawText("Too much characters!", 230, 300, 20, GRAY);
-        }
+        
 
         EndDrawing();
     }
