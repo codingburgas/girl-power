@@ -1,8 +1,8 @@
 <h1 align="center">Team girl power</h1>
 
 <p align="center">
-    <img src="https://media.discordapp.net/attachments/984532014214561802/1090109968117665792/banner-dark.jpg?width=1988&height=1118#gh-dark-mode-only"/>
-    <img src="https://media.discordapp.net/attachments/984532014214561802/1090109989579935774/banner-light.jpg?width=1988&height=1118#gh-light-mode-only"/>
+    <img src="Documents/banners/banner-dark.png#gh-dark-mode-only"/>
+    <img src="Documents/banners/banner-light.png#gh-light-mode-only"/>
 </p>
 
 <p align = "center">
